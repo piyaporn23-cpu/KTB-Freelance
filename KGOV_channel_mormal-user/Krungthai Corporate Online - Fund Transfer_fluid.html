@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<!-- saved from url=(0113)file:///Users/dollyd/Documents/KTB_Freelance/HTML/Krungthai%20Corporate%20Online%20-%20Fund%20Transfer_fluid.html -->
+<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krungthai Corporate Online - Fund Transfer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/AF498198-C447-4196-80EB-DA3A7E2E081D/Krungthai%20Corporate%20Online%20-%20Fund%20Transfer_files/css2" rel="stylesheet">
+  <style>
+    :root {
+      --ktb-blue: #009fe3;
+      --ktb-dark-blue: #004b73;
+      --ktb-light-bg: #f5f6f8;
+      --border-color: #d9dde2;
+      --disabled-bg: #e5e7eb;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --text-placeholder: #9ca3af;
+      --danger: #ef4444;
+      --container-max: 1368px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ffffff;
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.5;
+      min-width: 1200px;
+      padding-top: 92px; /* 60px top-navbar + 32px datetime-bar */
+    }
+
+    /* Top Navigation Bar */
+    .top-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: var(--ktb-blue);
+      color: #ffffff;
+      height: 60px;
+      width: 100%;
+    }
+
+    .navbar-inner {
+      max-width: 1920px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text .en {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-text .th {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.95;
+      transition: opacity 0.15s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .user-info {
+      text-align: right;
+      line-height: 1.25;
+      font-size: 13px;
+    }
+
+    .user-info .company {
+      opacity: 0.9;
+    }
+
+    .user-info .role {
+      font-weight: 600;
+    }
+
+    .user-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: var(--ktb-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 28px;
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Sub-header Date/Time Bar */
+    .datetime-bar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background-color: var(--ktb-dark-blue);
+      color: #ffffff;
+      height: 32px;
+      width: 100%;
+      font-size: 13px;
+    }
+
+    .datetime-inner {
+      max-width: 1920px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Main Container */
+    .main-wrapper {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 24px 24px 48px;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      font-size: 13px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb a {
+      color: var(--ktb-blue);
+      text-decoration: none;
+    }
+
+    .breadcrumb span.sep {
+      color: #9ca3af;
+    }
+
+    .breadcrumb span.current {
+      color: var(--text-main);
+    }
+
+    /* Page Title */
+    .page-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 24px;
+    }
+
+    /* Main Form Card */
+    .form-card {
+      background: #ffffff;
+      border: 1px solid #e2e5e9;
+      border-radius: 4px;
+      padding: 24px 32px 36px;
+    }
+
+    /* Stepper */
+    .stepper-box {
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      padding: 16px 24px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 48px;
+      position: relative;
+    }
+
+    .step-item {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding-top: 8px;
+      min-width: 130px;
+    }
+
+    .step-item.active::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--ktb-blue);
+    }
+
+    .step-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .step-item.active .step-circle {
+      border: 2px solid var(--ktb-blue);
+      background-color: #ffffff;
+    }
+
+    .step-item.inactive .step-circle {
+      border: 1.5px dashed #9ca3af;
+      background-color: transparent;
+    }
+
+    .step-label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .step-item.inactive .step-title {
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Form Grid Layout */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 64px;
+    }
+
+    .form-section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 18px;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px dashed #d1d5db;
+      margin: 28px 0;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 165px 1fr;
+      align-items: center;
+      margin-bottom: 16px;
+      column-gap: 16px;
+    }
+
+    .form-row.align-top {
+      align-items: flex-start;
+    }
+
+    .form-row.align-top .form-label {
+      padding-top: 8px;
+    }
+
+    .form-label {
+      text-align: right;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .form-label .req {
+      color: var(--danger);
+      margin-left: 2px;
+    }
+
+    /* Inputs & Controls */
+    .form-control {
+      width: 100%;
+      height: 38px;
+      padding: 0 12px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-main);
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form-control:focus {
+      border-color: var(--ktb-blue);
+    }
+
+    .form-control::placeholder {
+      color: var(--text-placeholder);
+    }
+
+    .form-control:disabled,
+    .form-control.readonly-gray {
+      background-color: var(--disabled-bg);
+      border-color: #e5e7eb;
+      color: #374151;
+      cursor: not-allowed;
+    }
+
+    .form-control.text-right {
+      text-align: right;
+    }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+      color: var(--text-placeholder);
+    }
+
+    select.form-control.has-value {
+      color: var(--text-main);
+    }
+
+    .input-with-icon {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-with-icon .form-control {
+      padding-right: 36px;
+    }
+
+    .input-with-icon .icon-right {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #4b5563;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
+
+    textarea.form-control {
+      height: 92px;
+      padding: 8px 12px;
+      resize: none;
+      line-height: 1.45;
+    }
+
+    .field-helper {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .field-helper.right-only {
+      justify-content: flex-end;
+    }
+
+    /* Checkbox */
+    .checkbox-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text-main);
+      user-select: none;
+    }
+
+    .checkbox-wrapper input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--ktb-blue);
+      cursor: pointer;
+    }
+
+    /* Notification Section */
+    .notification-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: var(--ktb-blue);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notification-body {
+      display: grid;
+      grid-template-columns: 165px 1fr;
+      column-gap: 16px;
+      align-items: flex-start;
+    }
+
+    .notification-body .left-label {
+      text-align: right;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      padding-top: 26px;
+    }
+
+    .notification-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 32px;
+    }
+
+    .sub-field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    /* Bottom Action Bar */
+    .action-bar {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 20px 24px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .action-right {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      height: 40px;
+      min-width: 100px;
+      padding: 0 24px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+
+    .btn-outline {
+      background-color: #ffffff;
+      border: 1px solid var(--ktb-blue);
+      color: var(--ktb-blue);
+    }
+
+    .btn-outline:hover {
+      background-color: #f0f9ff;
+    }
+
+    .btn-disabled {
+      background-color: #c2c5c8;
+      border: 1px solid #c2c5c8;
+      color: #6b7280;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background-color: var(--ktb-blue);
+      border: 1px solid var(--ktb-blue);
+      color: #ffffff;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #f2f4f7;
+      border-top: 1px solid #e5e7eb;
+      padding: 22px 24px 32px;
+      width: 100%;
+    }
+
+    .footer-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: var(--ktb-blue);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-navbar" style="
+">
+    <div class="navbar-inner" style="max-width: 100%;margin: 0;">
+      <div class="nav-left">
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#" class="brand-logo">
+          <div class="logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="en">Krungthai</span>
+            <span class="th">กรุงไทย</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li>
+            <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+              เมนู
+            </a>
+          </li>
+          <li>
+            <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              หน้าแรก
+            </a>
+          </li>
+          <li>
+            <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              งานของฉัน
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <div class="user-info">
+          <div class="company">UserID@Company ID - Company name</div>
+          <div class="role">Single1 (Single User)</div>
+        </div>
+        <div class="user-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+        <div class="nav-divider"></div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="cursor: pointer;">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Date & Time Bar -->
+  <div class="datetime-bar">
+    <div class="datetime-inner" style="
+    max-width: 100%;
+">
+      วันและเวลาปัจจุบัน: 09-10-2026 เวลา 17:00:02
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">หน้าแรก</a>
+      <span class="sep">/</span>
+      <span class="current">Fund Transfer: Make a Transfer</span>
+    </nav>
+
+    <!-- Heading -->
+    <h1 class="page-title">Fund Transfer</h1>
+
+    <!-- Form Card -->
+    <div class="form-card">
+      <!-- Stepper -->
+      <div class="stepper-box">
+        <div class="step-item active">
+          <div class="step-circle"></div>
+          <div class="step-label">
+            <span class="step-title">ขั้นตอนที่ 1</span>
+            <span class="step-desc">กรอกข้อมูล</span>
+          </div>
+        </div>
+        <div class="step-item inactive">
+          <div class="step-circle"></div>
+          <div class="step-label">
+            <span class="step-title">ขั้นตอนที่ 2</span>
+            <span class="step-desc">ตรวจสอบและยืนยัน</span>
+          </div>
+        </div>
+        <div class="step-item inactive">
+          <div class="step-circle"></div>
+          <div class="step-label">
+            <span class="step-title">ขั้นตอนที่ 3</span>
+            <span class="step-desc">ส่งรายการ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Reference Info -->
+      <div class="grid-2col">
+        <div>
+          <div class="form-row">
+            <label class="form-label">รหัสอ้างอิง</label>
+            <input type="text" class="form-control readonly-gray" value="CB000001166996" readonly="">
+          </div>
+          <div class="form-row">
+            <label class="form-label">ความเร่งด่วน</label>
+            <div>
+              <label class="checkbox-wrapper">
+                <input type="checkbox" id="urgentCheck">
+                <span>รายการด่วน (Urgent)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="form-row">
+            <label class="form-label">วันที่ทำรายการ</label>
+            <input type="text" class="form-control readonly-gray" value="08-10-2026" readonly="">
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 16px;"></div>
+
+      <!-- Section: โอนจาก & ไปยัง -->
+      <div class="grid-2col">
+        <!-- Left Column: โอนจาก -->
+        <div>
+          <h2 class="form-section-title">โอนจาก</h2>
+          <div class="form-row">
+            <label class="form-label">เลขที่บัญชี<span class="req">*</span></label>
+            <select class="form-control" id="fromAccount" onchange="handleAccountSelect(this)">
+              <option value="" selected="" disabled="">พิมพ์คำค้นหาหรือเลือกจากรายการ</option>
+              <option value="000-1-23456-7">000-1-23456-7 - บัญชีกระแสรายวัน</option>
+              <option value="000-2-98765-4">000-2-98765-4 - บัญชีออมทรัพย์</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="form-label">ชื่อแทนบัญชี</label>
+            <input type="text" id="fromAlias" class="form-control readonly-gray" value="-" readonly="">
+          </div>
+          <div class="form-row">
+            <label class="form-label">ชื่อบัญชี</label>
+            <input type="text" id="fromName" class="form-control readonly-gray" value="-" readonly="">
+          </div>
+        </div>
+
+        <!-- Right Column: ไปยัง -->
+        <div>
+          <h2 class="form-section-title">ไปยัง</h2>
+          <div class="form-row">
+            <label class="form-label">ประเภทบริการ<span class="req">*</span></label>
+            <select class="form-control" id="serviceType" onchange="this.classList.add('has-value')">
+              <option value="" selected="" disabled="">เลือกประเภทบริการ</option>
+              <option value="ktb">โอนเงินภายในธนาคารกรุงไทย</option>
+              <option value="interbank">โอนเงินต่างธนาคาร (ORFT / BAHTNET)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="form-label">เลขที่บัญชี<span class="req">*</span></label>
+            <select class="form-control" id="toAccount" onchange="handleToAccountSelect(this)">
+              <option value="" selected="" disabled="">พิมพ์คำค้นหาหรือเลือกจากรายการ</option>
+              <option value="111-2-33344-5">111-2-33344-5 - บริษัท คู่ค้า จำกัด</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="form-label">ชื่อแทนบัญชี</label>
+            <input type="text" id="toAlias" class="form-control readonly-gray" value="-" readonly="">
+          </div>
+          <div class="form-row">
+            <label class="form-label">ชื่อผู้รับเงิน (ไทย)</label>
+            <input type="text" id="toNameTh" class="form-control readonly-gray" value="-" readonly="">
+          </div>
+          <div class="form-row">
+            <label class="form-label">ชื่อผู้รับเงิน (อังกฤษ)<span class="req">*</span></label>
+            <input type="text" id="toNameEn" class="form-control readonly-gray" value="-" readonly="">
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Section: ข้อมูลการโอนเงิน -->
+      <div>
+        <h2 class="form-section-title">ข้อมูลการโอนเงิน</h2>
+        <div class="grid-2col">
+          <!-- Left -->
+          <div>
+            <div class="form-row">
+              <label class="form-label">จำนวนเงิน (บาท)<span class="req">*</span></label>
+              <input type="text" id="amountInput" class="form-control text-right" placeholder="ระบุจำนวนเงิน" oninput="validateForm()">
+            </div>
+            <div class="form-row">
+              <label class="form-label">ค่าธรรมเนียม (บาท)</label>
+              <input type="text" class="form-control readonly-gray text-right" value="0.00" readonly="">
+            </div>
+            <div class="form-row">
+              <label class="form-label">ผู้ชำระค่าธรรมเนียม<span class="req">*</span></label>
+              <select class="form-control" id="feePayer" onchange="this.classList.add('has-value')">
+                <option value="" selected="">-</option>
+                <option value="sender">ผู้โอนเป็นผู้ชำระ</option>
+                <option value="receiver">ผู้รับเป็นผู้ชำระ</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div>
+            <div class="form-row">
+              <label class="form-label">วันที่มีผล<span class="req">*</span></label>
+              <div class="input-with-icon">
+                <input type="text" class="form-control" value="08-10-2026">
+                <span class="icon-right">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="form-row align-top">
+              <label class="form-label">บันทึกช่วยจำ</label>
+              <div>
+                <textarea id="memoInput" class="form-control" maxlength="250" placeholder="ระบุบันทึกช่วยจำ" oninput="updateMemoCount(this)"></textarea>
+                <div class="field-helper right-only">
+                  <span id="memoCounter">0/250 ตัวอักษร</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Section: การแจ้งเตือน -->
+      <div>
+        <div class="notification-header">
+          <h2 class="form-section-title" style="margin-bottom: 0;">การแจ้งเตือน</h2>
+          <button type="button" class="toggle-btn" onclick="toggleNotification(this)">
+            <svg id="notiChevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+            <span id="notiToggleText">ซ่อน</span>
+          </button>
+        </div>
+
+        <div id="notificationContent" class="notification-body">
+          <div class="left-label">แจ้งผู้รับเงิน</div>
+          <div class="notification-inputs">
+            <div>
+              <label class="sub-field-label">อีเมล</label>
+              <textarea class="form-control" placeholder="เพิ่มได้สูงสุด 5 อีเมล" oninput="updateItemCount(this, 'emailCounter', 'อีเมล')"></textarea>
+              <div class="field-helper">
+                <span>ใช้เครื่องหมาย (,) เพื่อแบ่งอีเมล</span>
+                <span id="emailCounter">1/5 อีเมล</span>
+              </div>
+            </div>
+            <div>
+              <label class="sub-field-label">โทรศัพท์มือถือ</label>
+              <textarea class="form-control" placeholder="เพิ่มได้สูงสุด 5 หมายเลข" oninput="updateItemCount(this, 'phoneCounter', 'หมายเลข')"></textarea>
+              <div class="field-helper">
+                <span>ใช้เครื่องหมาย (,) เพื่อแบ่งโทรศัพท์มือถือ</span>
+                <span id="phoneCounter">0/5 หมายเลข</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Action Bar -->
+  <div style="border-top: 1px solid #e5e7eb; background: #ffffff;">
+    <div class="action-bar" style="
+    max-width: 100%;
+">
+      <button type="button" class="btn btn-outline">กลับ</button>
+      <div class="action-right">
+        <button type="button" id="draftBtn" class="btn btn-disabled" disabled="">บันทึกร่าง</button>
+        <button type="button" id="nextBtn" class="btn btn-disabled" disabled="">ถัดไป</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">ข้อตกลงและเงื่อนไขการใช้บริการ</a>
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">นโยบายความเป็นส่วนตัว</a>
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">คู่มือและวิดีโอสอนใช้งาน</a>
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/0F1A7163-51F8-4D0D-94EA-18CDC500DB02/fund-transfer-1920.html#">ติดต่อเรา</a>
+      </div>
+      <div class="footer-copy">
+        <span>v1.0.0</span>
+        <span>|</span>
+        <span>© สงวนสิทธิ์ พ.ศ.2570 บมจ.ธนาคารกรุงไทย</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleAccountSelect(selectEl) {
+      selectEl.classList.add('has-value');
+      document.getElementById('fromAlias').value = 'บัญชีหลักหน่วยงาน';
+      document.getElementById('fromName').value = 'สำนักงานปลัดกระทรวงตัวอย่าง';
+      validateForm();
+    }
+
+    function handleToAccountSelect(selectEl) {
+      selectEl.classList.add('has-value');
+      document.getElementById('toAlias').value = 'คู่ค้าหลัก 01';
+      document.getElementById('toNameTh').value = 'บริษัท คู่ค้า จำกัด';
+      document.getElementById('toNameEn').value = 'PARTNER COMPANY LIMITED';
+      validateForm();
+    }
+
+    function updateMemoCount(textarea) {
+      const len = textarea.value.length;
+      document.getElementById('memoCounter').textContent = `${len}/250 ตัวอักษร`;
+    }
+
+    function updateItemCount(textarea, counterId, unit) {
+      const val = textarea.value.trim();
+      const count = val === '' ? 0 : val.split(',').filter(item => item.trim() !== '').length;
+      document.getElementById(counterId).textContent = `${Math.min(count, 5)}/5 ${unit}`;
+    }
+
+    function toggleNotification(btn) {
+      const content = document.getElementById('notificationContent');
+      const text = document.getElementById('notiToggleText');
+      const chevron = document.getElementById('notiChevron');
+      if (content.style.display === 'none') {
+        content.style.display = 'grid';
+        text.textContent = 'ซ่อน';
+        chevron.innerHTML = '<polyline points="18 15 12 9 6 15"></polyline>';
+      } else {
+        content.style.display = 'none';
+        text.textContent = 'แสดง';
+        chevron.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>';
+      }
+    }
+
+    function validateForm() {
+      const amount = document.getElementById('amountInput').value.trim();
+      const draftBtn = document.getElementById('draftBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (amount !== '') {
+        draftBtn.disabled = false;
+        draftBtn.className = 'btn btn-outline';
+        nextBtn.disabled = false;
+        nextBtn.className = 'btn btn-primary';
+      } else {
+        draftBtn.disabled = true;
+        draftBtn.className = 'btn btn-disabled';
+        nextBtn.disabled = true;
+        nextBtn.className = 'btn btn-disabled';
+      }
+    }
+  </script>
+
+
+</body></html>
