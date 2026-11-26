@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0144)file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/BB5E1E02-99CA-4685-AB24-060FD6324EF3/krungthai-corporate-delete-modal_final.html -->
+<!-- saved from url=(0144)file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/6904F70E-8496-4BD6-BC82-6EAA0693F112/krungthai-corporate-delete-modal_final.html -->
 <html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -436,7 +436,7 @@
 
     .confirm-table {
       width: 100%;
-      min-width: 1180px; /* Triggers horizontal scroll + right shadow on narrower viewports */
+      min-width: 960px; /* Triggers horizontal scroll + right shadow on narrower viewports */
       border-collapse: separate;
       border-spacing: 0;
       text-align: left;
@@ -490,19 +490,20 @@
     }
 
     .reason-flex {
-      display: flex;
-      flex-wrap: nowrap;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: center;
       gap: 24px;
       width: 100%;
+      position: sticky;
+      left: 16px;
     }
 
     .field-inline {
       display: flex;
       align-items: center;
       gap: 12px;
-      flex: 0 0 calc(50% - 12px);
-      max-width: calc(50% - 12px);
+      width: 100%;
       min-width: 0;
     }
 
@@ -628,12 +629,7 @@
       .modal-footer {
         padding: 12px 20px 16px;
       }
-      .select-wrapper {
-        width: 250px;
-      }
-      .form-input {
-        width: 230px;
-      }
+
     }
 
     /* 2. Laptop: 1440 x 900 -> 90% = 1296px x 810px */
@@ -783,10 +779,10 @@
 
     <footer class="page-footer">
       <div class="footer-links">
-        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/BB5E1E02-99CA-4685-AB24-060FD6324EF3/krungthai-corporate-delete-modal_final.html#">ข้อตกลงและเงื่อนไขการใช้บริการ</a>
-        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/BB5E1E02-99CA-4685-AB24-060FD6324EF3/krungthai-corporate-delete-modal_final.html#">นโยบายความเป็นส่วนตัว</a>
-        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/BB5E1E02-99CA-4685-AB24-060FD6324EF3/krungthai-corporate-delete-modal_final.html#">คู่มือและวิดีโอสอนใช้งาน</a>
-        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/BB5E1E02-99CA-4685-AB24-060FD6324EF3/krungthai-corporate-delete-modal_final.html#">ติดต่อเรา</a>
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/6904F70E-8496-4BD6-BC82-6EAA0693F112/krungthai-corporate-delete-modal_final.html#">ข้อตกลงและเงื่อนไขการใช้บริการ</a>
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/6904F70E-8496-4BD6-BC82-6EAA0693F112/krungthai-corporate-delete-modal_final.html#">นโยบายความเป็นส่วนตัว</a>
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/6904F70E-8496-4BD6-BC82-6EAA0693F112/krungthai-corporate-delete-modal_final.html#">คู่มือและวิดีโอสอนใช้งาน</a>
+        <a href="file:///private/var/folders/52/ztf_fxqd1c3d4pnw6599ds5h0000gn/T/6904F70E-8496-4BD6-BC82-6EAA0693F112/krungthai-corporate-delete-modal_final.html#">ติดต่อเรา</a>
       </div>
       <div>v1.0.0 | © สงวนสิทธิ์ พ.ศ.2570 บมจ.ธนาคารกรุงไทย</div>
     </footer>
@@ -807,7 +803,7 @@
           ท่านยืนยันการลบ 3 รายการ นี้ออกจากระบบหรือไม่
         </p>
 
-        <div class="table-outer-container" id="tableOuterContainer">
+        <div class="table-outer-container has-right-scroll" id="tableOuterContainer">
           <div class="table-scroll-wrapper" id="tableScrollWrapper">
           <table class="confirm-table">
             <thead>
@@ -841,7 +837,7 @@
               </tr>
               <tr class="item-row">
                 <td colspan="6" class="reason-cell">
-                  <div class="reason-flex">
+                  <div class="reason-flex" style="width: 842px;">
                     <div class="field-inline">
                       <label class="field-label" for="reason1">เหตุผล<span class="required-star">*</span></label>
                       <div class="select-wrapper">
@@ -888,7 +884,7 @@
               </tr>
               <tr class="item-row alt-bg">
                 <td colspan="6" class="reason-cell">
-                  <div class="reason-flex">
+                  <div class="reason-flex" style="width: 842px;">
                     <div class="field-inline">
                       <label class="field-label" for="reason2">เหตุผล<span class="required-star">*</span></label>
                       <div class="select-wrapper">
@@ -904,7 +900,7 @@
                       </div>
                     </div>
 
-                    <div class="field-inline" id="detailGroup2" style="display: none;">
+                    <div class="field-inline" id="detailGroup2" style="display: flex;">
                       <label class="field-label" for="detail2">รายละเอียดเพิ่มเติม<span class="required-star">*</span></label>
                       <input type="text" id="detail2" class="form-input" value="บัญชีไม่ถูกต้อง" placeholder="ระบุรายละเอียดเพิ่มเติม">
                     </div>
@@ -935,7 +931,7 @@
               </tr>
               <tr class="item-row">
                 <td colspan="6" class="reason-cell">
-                  <div class="reason-flex">
+                  <div class="reason-flex" style="width: 842px;">
                     <div class="field-inline">
                       <label class="field-label" for="reason3">เหตุผล<span class="required-star">*</span></label>
                       <div class="select-wrapper">
@@ -979,16 +975,16 @@
     const reopenModalBtn = document.getElementById('reopenModalBtn');
 
     // Toggle "รายละเอียดเพิ่มเติม" when "อื่นๆ" is selected
+    function syncReasonDetail(select) {
+      const targetId = select.getAttribute('data-target');
+      const detailGroup = document.getElementById(targetId);
+      if (!detailGroup) return;
+      detailGroup.style.display = select.value === 'other' ? 'flex' : 'none';
+    }
+
     document.querySelectorAll('.reason-select').forEach((select) => {
-      select.addEventListener('change', (e) => {
-        const targetId = e.target.getAttribute('data-target');
-        const detailGroup = document.getElementById(targetId);
-        if (e.target.value === 'other') {
-          detailGroup.style.display = 'flex';
-        } else {
-          detailGroup.style.display = 'none';
-        }
-      });
+      syncReasonDetail(select);
+      select.addEventListener('change', (e) => syncReasonDetail(e.target));
     });
 
     // Close Modal
@@ -1016,6 +1012,10 @@
 
     function updateHorizontalScrollShadow() {
       if (!tableScrollWrapper || !tableOuterContainer) return;
+      const visibleWidth = tableScrollWrapper.clientWidth - 32;
+      document.querySelectorAll('.reason-flex').forEach((el) => {
+        el.style.width = visibleWidth > 0 ? visibleWidth + 'px' : '100%';
+      });
       const maxScrollLeft = tableScrollWrapper.scrollWidth - tableScrollWrapper.clientWidth;
       if (maxScrollLeft > 2 && tableScrollWrapper.scrollLeft < maxScrollLeft - 2) {
         tableOuterContainer.classList.add('has-right-scroll');
